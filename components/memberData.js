@@ -1,4 +1,3 @@
-"use client";
 import base from "lib/base";
 import QRCode from "react-qr-code";
 
