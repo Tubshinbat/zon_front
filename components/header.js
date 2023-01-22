@@ -3,6 +3,7 @@ import base from "lib/base";
 import Link from "next/link";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import MobileMenu from "./mobileMenu";
 
 export default ({ info, menus, socialLinks }) => {
   const pathname = usePathname();
@@ -55,6 +56,7 @@ export default ({ info, menus, socialLinks }) => {
               </a>
             </div>
             <ul className="header__menus">{renderMenu(menus)}</ul>
+            <MobileMenu info={info} menus={menus} socialLinks={socialLinks} />
           </nav>
         </div>
       </header>

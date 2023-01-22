@@ -126,6 +126,7 @@ export default ({ types, initPagination, members }) => {
                         onSelect={onSelect}
                         selectedKeys={selectedKeys}
                         treeData={treeData}
+                        className="tree-members"
                       />
                     </div>
                   </div>
@@ -134,7 +135,7 @@ export default ({ types, initPagination, members }) => {
               <div className="col-lg-9">
                 <div className="row members__list">
                   {data.map((member) => (
-                    <div className="col-md-4">
+                    <div className="col-lg-4 col-md-6">
                       <div className="member__box">
                         <div className="member__image">
                           <a href={`/members/${member._id}`}>
