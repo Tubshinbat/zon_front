@@ -1,10 +1,9 @@
 import Bread from "components/bread";
 import MemberData from "components/memberData";
 import { getMember } from "lib/member";
-import { use } from "react";
 
-export default  function Page({ params: { id } }) {
-  const { member } = use(getMember(id));
+export default async function Page({ params: { id } }) {
+  const { member } = await getMember(id);
   return (
     <>
 
