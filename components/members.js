@@ -7,6 +7,7 @@ import { getMembers } from "lib/member";
 import base from "lib/base";
 import Pagination from "react-js-pagination";
 import Spinner from "components/spinner";
+import Link from "next/link";
 
 export default ({ types, initPagination, members }) => {
   const [expandedKeys, setExpandedKeys] = useState();
@@ -143,17 +144,17 @@ export default ({ types, initPagination, members }) => {
                     <div className="col-lg-4 col-md-6">
                       <div className="member__box">
                         <div className="member__image">
-                          <a href={`/members/${member._id}`}>
+                          <Link href={`/members/${member._id}`}>
                             <img src={`${base.cdnUrl}/${member.pictures[0]}`} />
-                          </a>
+                          </Link>
                         </div>
                         <div className="member__details">
-                          <a href={`/members/${member._id}`}>
+                          <Link href={`/members/${member._id}`}>
                             <h5>
                               {member.lastName}{" "}
                               <span> {member.firstName} </span>
                             </h5>
-                          </a>
+                          </Link>
                           <p className="member__status">{member.position} </p>
                           <p className="member__type">
                             {member.status == true && "Жинхэнэ гишүүн"}
