@@ -43,6 +43,9 @@ export default ({ info, menus, socialLinks }) => {
               </div>
               <div className="col-lg-3">
                 <div className="footerTitle">Бидний тухай</div>
+                <li>
+                  <a href={`/members`}> Жинхэнэ гишүүн гэж хэн бэ? </a>
+                </li>
                 {renderMenu(menus)}
               </div>
               <div className="col-lg-3">

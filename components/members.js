@@ -6,12 +6,14 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { getMembers } from "lib/member";
 import base from "lib/base";
 import Pagination from "react-js-pagination";
+import Spinner from "components/spinner";
 
 export default ({ types, initPagination, members }) => {
   const [expandedKeys, setExpandedKeys] = useState();
   const [checkedKeys, setCheckedKeys] = useState();
   const [selectedKeys, setSelectedKeys] = useState([]);
   const [searchName, setSearchName] = useState("");
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState(members);
   const [autoExpandParent, setAutoExpandParent] = useState(true);
   const [treeData, setTreeData] = useState([]);
@@ -49,9 +51,11 @@ export default ({ types, initPagination, members }) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       const { members, pagination } = await getMembers(searchParams.toString());
       setPagination(pagination);
       setData(members);
+      setLoading(false);
     };
 
     fetchData();
@@ -133,6 +137,7 @@ export default ({ types, initPagination, members }) => {
                 </div>
               </div>
               <div className="col-lg-9">
+                {loading === true && <Spinner />}
                 <div className="row members__list">
                   {data.map((member) => (
                     <div className="col-lg-4 col-md-6">

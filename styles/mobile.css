@@ -7,6 +7,63 @@
   .header__menus {
     display: none;
   }
+
+  .header {
+    padding: 20px 0px;
+  }
+  .footerTitle {
+    margin-top: 30px;
+  }
+
+  .member_img {
+    height: 600px;
+  }
+
+  .qr__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .qr__box svg {
+    width: 40%;
+  }
+}
+
+@media (max-width: 767px) {
+  .member__image {
+    height: 340px;
+  }
+        .header__menus {
+          display: none;
+        }
+  .page__content {
+    margin-top: 25px;
+  }
+  .member_img {
+    height: 450px;
+  }
+  .member__about_box {
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .member_img {
+    height: 340px;
+  }
+}
+
+@media (max-width: 360px) {
+  .member__image {
+    height: 240px;
+  }
+  .member_img {
+    height: 240px;
+  }
 }
 
 .mobileLogo {
@@ -79,6 +136,11 @@
 
 .contactMobile li {
   margin-bottom: 7px;
+}
+
+.contactMobile a {
+  text-decoration: none;
+  color: rgb(82, 5, 112);
 }
 
 .socialMobile {

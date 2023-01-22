@@ -63,13 +63,7 @@ const MobileMenu = ({ menus, info, socialLinks }) => {
           <i className="fa-solid fa-xmark" onClick={handleToggle}></i> Үндсэн
           цэс
         </h5>
-        <ul>
-          {renderMenu(dataMenus)}
-
-          <li>
-            <Link href="/contact">Холбоо барих</Link>
-          </li>
-        </ul>
+        <ul>{renderMenu(dataMenus)}</ul>
         <div className="contactMobile">
           <li>
             <a href={`tel:${info.phone}`}> Утас: {info.phone} </a>
