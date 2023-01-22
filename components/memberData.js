@@ -1,9 +1,16 @@
 import base from "lib/base";
 import QRCode from "react-qr-code";
+import Bread from "components/bread";
+import { getMember } from "lib/member";
 
-export default ({ member }) => {
+export default async ({ memberId }) => {
+  const { member } = await getMember(memberId);
   return (
     <>
+      <Bread
+        title={member && member.lastName + " " + member.firstName}
+        back={true}
+      />
       <div className="seaction-top">
         <div className="container">
           <div className="page__content">
