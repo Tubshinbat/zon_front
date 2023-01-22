@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:8060/api/v1/",
+  baseURL: "https://beta.metaldoor.mn/api/",
 });
 
 instance.defaults.withCredentials = true;
